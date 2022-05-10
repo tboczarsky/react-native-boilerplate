@@ -1,0 +1,8 @@
+{
+  "name": "react-native-boilerplate",
+  "version": "0.0.1",
+  "description": "React Native Template",
+  "repository": "git@git.qarbon.host/Qarbon/react-native-boilerplate.git",
+  "author": "Qarbon IT <info@qarbon.it>",
+  "license": "MIT"
+}
