@@ -5,6 +5,7 @@ import {NavigationContainer} from '@react-navigation/native';
 import {AppNavigator} from './src/navigators/app-navigator';
 import {I18nextProvider} from 'react-i18next';
 import {AuthStoreProvider} from './src/models/Auth.store';
+import {AppToast} from './src/components/AppToast/AppToast';
 
 const SafeAreaViewStyle = {flex: 1};
 
@@ -18,6 +19,7 @@ const App = () => {
             <AppNavigator />
           </NavigationContainer>
         </SafeAreaView>
+        <AppToast />
       </I18nextProvider>
     </AuthStoreProvider>
   );

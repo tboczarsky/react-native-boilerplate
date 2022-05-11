@@ -3,6 +3,7 @@ import React from 'react';
 import {useTranslation} from 'react-i18next';
 import {View, Text, Button} from 'react-native';
 import {useAuthStore} from '../../models/Auth.store';
+import Toast from 'react-native-toast-message';
 
 const HomeWrapperStyles = {
   flex: 1,
@@ -16,16 +17,21 @@ const HiMomStyles = {
 
 export const HomeScreen = observer(() => {
   const authStore = useAuthStore();
-  const {t} = useTranslation();
+  const {t} = useTranslation('common');
 
   const handleLogout = () => {
     authStore.clearSession();
+    const message = t('logout.message.success');
+    Toast.show({
+      type: 'success',
+      text1: message,
+    });
   };
 
   return (
     <View style={HomeWrapperStyles}>
-      <Text style={HiMomStyles}>{t('hi.mom', {ns: 'common'})}</Text>
-      <Button onPress={handleLogout} title="Log out" />
+      <Text style={HiMomStyles}>{t('hi.mom')}</Text>
+      <Button onPress={handleLogout} title={t('logout.button')} />
     </View>
   );
 });
